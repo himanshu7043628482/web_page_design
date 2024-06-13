@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prectice</title>
+</head>
+<body>
+    <script>
+        var fullname = "sandip";
+        console.log(fullname,typeof fullname);
+        let age =25;
+        console.log(age,typeof age);
+        let isActive=true;
+        console.log(isActive,typeof isActive);
+        let std;
+        console.log(std,typeof std);
+        let subjects=null;
+        console.log(subjects,typeof subjects);
+        subjects ={first:"php" , marks:"90"}
+        let fullDetials ={
+            "fullname":"Himanshu",
+            "age":"22",
+            "dod":"1980-09-30",
+            "isActive":isActive,
+            mysubject:{
+                first:"javasript",marks:"100"
+            }
+        };
+        console.log(fullDetials,typeof fullDetials);
+        console.log(fullDetials.fullname);
+        console.log(fullDetials.fullname.first);
+        fullDetials.fullname ="kartik";
+        console.log(fullDetials);
+        fullDetials.mysubject.marks = "99"
+
+    </script>
+    
+</body>
+</html>

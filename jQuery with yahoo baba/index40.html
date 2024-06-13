@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 500px;
+            background: lightslategray;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Event preventDefault Method</h1>
+
+    <div id="box">
+        <a href="http://www.himanshu.net" id="h">Himanshu Website(preventDefault)</a>
+        <br><br>
+        <a href="http://www.himanshu.net">Himanshu Website</a>
+    </div>
+    <h2></h2>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').click(function(event){
+                event.preventDefault();
+
+                var a = event.isDefaultPrevented();
+                $('h2').html(a);  
+            })
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator-2</title> 
+    <style>
+        #btn{
+         margin-left: 100px;
+        }
+    
+    </style>
+</head>
+<body> 
+    <div class="C-2">
+    <div>
+    Value1 :<input type="text" id="input1" name="value1"/>
+    </div><br>
+    <div>
+     Value2 :<input type="text" id="input2" name="value2"/>
+    </div><br>
+    <div>
+        Operators:
+        <select name="operators" id="Ope">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+     </div><br>
+     <div>
+     Answer :<input type="text" id="Ans" name="value3"/><br>
+     </div><br>
+     <div>
+     <button id="btn" onclick="calculetAns()">Click</button>
+     </div>
+     </div>
+       <script>
+        var javab1 = "";
+        var f1 ="";
+        var f2 ="";
+        var oper ="";
+        var answer ="";
+        function calculetAns(){
+            var first = parseInt(document.getElementById("input1").value);
+            var second = parseInt(document.getElementById("input2").value);
+            var operator1 =document.getElementById("Ope").value;
+            var Answer =document.getElementById("Ans").value;
+           
+             if(f1 ===first && f2 ===second && oper === operator1){
+                 if(oper ==="+"){
+                    document.getElementById("Ans").value= javab1 += second;
+                }
+                if(oper ==="-"){
+                     document.getElementById("Ans").value= javab1 -= second;
+                 } 
+                 if(oper ==="*"){
+                     document.getElementById("Ans").value= javab1 *= second;   
+                 }
+                 if(oper ==="/"){
+                     document.getElementById("Ans").value= javab1 /= second;   
+                 } 
+                 if(oper ==="%"){
+                     document.getElementById("Ans").value= javab1 %= second; 
+                 }
+                 javab1 = parseInt(document.getElementById("Ans").value);
+             } 
+ 
+             else {
+                 f1 = first;             
+                 f2 = second;
+                 oper = operator1;
+                 answer = Answer;
+                 if(operator1 ==="+"){
+                    document.getElementById("Ans").value = first + second; 
+                 }
+                 if(operator1 ==="-"){  
+                    document.getElementById("Ans").value = first - second;
+                 } 
+                 if(operator1 ==="*"){
+                    document.getElementById("Ans").value = first * second;
+                 }  
+                 if(operator1 ==="/"){
+                    document.getElementById("Ans").value = first / second; 
+                 } 
+                 if(operator1 ==="%"){
+                    document.getElementById("Ans").value = first % second;
+                 }
+                 javab1 = parseInt(document.getElementById("Ans").value);
+             }
+        }
+       </script>
+</body> 
+</html>       

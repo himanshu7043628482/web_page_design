@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: lightpink;
+            padding: 10px;
+            border: 2px solid black;
+            left: 20px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Animate & Stop Method</h1>
+    <div id="box" class="test">Himanshu Prajapati</div><br>
+    <button id="animate">Animate</button>
+    <button id="stop">Stop</button>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#animate').click(function () {
+                // $('#box').animate({
+                //     left:'150px',
+                //     width:'+150px',
+                //     fontSize:'25px',
+                //     borderWidth:'5px'
+                // });
+                // $('#box').animate({left:'500px'},2000);
+                // $('#box').animate({top:'300px'});
+                $('#box').animate({width:'500px'},3000);
+            });
+            $('#stop').click(function(){
+                $('#box').stop(true);
+            })
+        });
+    </script>
+</body>
+
+</html>

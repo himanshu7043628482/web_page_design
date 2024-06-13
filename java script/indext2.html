@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet Task</title>
+    <style>
+        #container{
+            display: block;
+            margin-left: 50px;
+        }
+        button{
+            margin-left: 100px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <div class="book1">
+                <label>HTML :</label>
+                <input id="bookOne" type="number"  value="">
+            </div><br>
+            <div class="book2">
+                <label>CSS :</label>
+                <input id="bookTow" type="number"  value="">
+            </div><br>
+            <div class="book3">
+                <label>JAVASCRIPT :</label>
+                <input id="bookThree" type="number"  value="">
+            </div><br>
+            <div class="book4">
+                <label>PHP :</label>
+                <input id="bookFour" type="number"  value="">
+            </div><br>
+            <div class="book5">
+                <label>LARAVEL :</label>
+                <input id="bookFive" type="number"  value="">
+            </div> <br>
+            <button onclick="allbooksDetailes()">click</button>
+        </div>
+</div>
+
+<script>
+function allbooksDetailes () {
+    var htmlmark =document.getElementById("bookOne").value;
+    var cssmark =document.getElementById("bookTow").value;
+    var javascriptmark =document.getElementById("bookThree").value;
+    var phpmark =document.getElementById("bookFour").value;
+    var laravelmark =document.getElementById("bookFive").value;
+    var totalemark =parseFloat(htmlmark) + parseFloat(cssmark) + parseFloat(javascriptmark) + parseFloat(phpmark) + parseFloat(laravelmark);
+    var percentage = (totalemark/500)*100;
+    var grade = percentage;
+    var result = result;
+
+    // check the condition
+    if(percentage <= 100 && percentage >=80){
+        grade = "A"; 
+    }
+    else if(percentage <= 79 && percentage >=60){
+        grade ="B";
+    }
+    else if(percentage <= 59 && percentage >=41){
+        grade = "C";
+    }
+    else{
+        grade = "F";
+    };
+    // check the result
+    if(htmlmark & cssmark & javascriptmark & phpmark & laravelmark >= 40){
+        result ="pass";
+    }
+    else{
+        result ="Fail"
+    }
+    
+    let Marksheet = {
+        Html: htmlmark,
+        Css : cssmark,
+        Javascript : javascriptmark,
+        Php : phpmark,
+        Laravel : laravelmark,
+        Totalemark:totalemark ,
+        Result:{
+
+            Grade :grade,
+            Peresentage :percentage,
+            Result : result
+        }
+}
+console.log(Marksheet);
+}
+
+</script>
+</body>
+</html>

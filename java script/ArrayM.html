@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <script>
+        //  1.[Sort()] & 2.[Revarse()]
+
+       /* var a =["jay","chetan","aman","ajay"];
+        document.write(a + "<br><br>");
+        a.sort();
+        document.write(a + "<br>");
+        a.reverse();
+        document.write(a + "<br>");*/
+
+        // 3.[Pop()] & 4.[Push()]
+
+        var a =["sanjay","rahul","akash","anil"];
+        // a.pop();
+        // console.log(a);
+        a.push();
+        console.log(a);
+        a.push("tushar");
+        console.log(a);
+
+        // 5.[Shift()] & 6.[Unshift()]
+
+        /*var a =["sanjay","rahul","akash","anil"];
+        document.write(a + "<br><br>");
+        a.shift();
+        document.write(a + "<br><br>");
+        a.unshift("radha");
+        document.write(a + "<br><br>");*/
+
+        // 7.[Concat()] & 8.[Join()]
+
+        // var a =["kano","himanshu","raman"];
+        // var b =a.concat("rahul","karan");
+        // document.write(b);
+        /*var a =["kano","himanshu","raman"];
+        var b =["rahul","karan"];
+        var d =["radha","rani"]
+        var c = a.concat(b,d);
+        document.write(c + "<br><br>");
+        var e =c.join(" / ");
+        document.write(e);*/
+
+        // 9.[Slice()] & 10.[Splice()]
+
+        /*var a = ["aman","jay","meet","ghano","anil","sandip"];
+        document.write(a + "<br><br>");
+        // var b = a.slice(2,4);
+        var b = a.slice(-2);
+        document.write(b + "<br><br>");
+        var a = ["aman","jay","meet","ghano","anil","sandip"];
+        document.write(a + "<br><br>");
+        a.splice(0,2); 
+        document.write(a + "<br><br>");
+        a.splice(0,2,"hina","rani");
+        document.write(a + "<br><br>");*/
+
+        // 11.[isArray()]
+
+       /* var a =["anil","rahul","vishal",10];
+        // var a = 10;
+        // var a ="vishal";
+        document.write(a + "<br><br>");
+        // var b = Array.isArray(a);
+        // document.write(b + "<br><br>");
+        if(Array.isArray(a)){
+            document.write(" This is a Array");
+        }
+        else{
+            document.write(" This is not an Array");
+
+        }*/
+
+        // 12.[indexOf()] & 13.[lastindexOf()]
+
+       /* var a =["rahul","anuj","bheem","sanjay","anil"];
+        document.write(a + "<br><br>");
+        // var b = a.indexOf("sanjay");
+        var b = a.indexOf("hena");
+        document.write(b);
+
+        // var c = a.lastIndexOf("anil");
+        var c = a.lastIndexOf("milan");
+        document.write(c + "<br><br>");*/
+
+        // 13.[includes()]
+
+       /* var a = ["sanjay","aamin","rahul","yash"];
+        document.write(a + "<br><br>");
+
+        var b =a.includes("yash");
+        // var b =a.includes("yashi");
+        document.write(b);*/
+
+        // 14.[some()] & 15.[every()]
+
+       /* var ages = [10,14,18,20];
+        // var ages =[10,12,14,16]
+        document.write(ages + "<br><br>");
+        var b = ages.some(checkAdult);
+        document.write(b + "<br><br>");
+        function checkAdult(age){
+            return age >=18;
+        }
+        var ages = [20,24,28,30];
+        // var ages =[10,12,14,16]
+        document.write(ages + "<br><br>");
+        var b = ages.every(checkAdult);
+        document.write(b + "<br><br>");
+        function checkAdult(age){
+            return age >=18;
+        }*/
+        
+        // 16.[find()] & 17.[findindex()]
+
+       /* // var ages = [15,20,25,30];
+        var ages = [10,12,18,13];
+        document.write(ages + "<br><br>");
+
+        var b =ages.find(checkAdult);
+        var c =ages.findIndex(checkAdult);
+        document.write(b + "<br><br>");
+        document.write(c + "<br><br>");
+        function checkAdult(age){
+            return age >= 18; 
+        }*/
+
+        // 18.[filter()]
+
+        // var ages =[10,15,18,20,22];
+        /*var ages =[10,8,5,20,12];
+        document.write(ages + "<br><br>");
+
+        var b = ages.filter(checkAdult);
+        document.write(b + "<br><br>");
+        function checkAdult(age){
+            return age >= 18;
+        }*/
+
+        // 19.[toString()] & 20.[valueOf()] & 21.[fill()] 
+
+       /* var a =["radha","kahno","rani","raja"];
+        // a.toString();
+        // document.write(a);
+        // document.write(a.valueOf());
+        a.fill("Ram");
+        document.write(a);*/
+
+        // 22.[forEach()]
+        /*var a =["rahul","karan","aman","jay"];
+        // a.forEach(function(value,number){
+        //     document.write(number + " : "  + value + "<br>");
+
+        // });
+        a.forEach(loop);
+        function loop(value,index){
+            document.write(index + " : " + value + "<br>")
+        }*/  
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

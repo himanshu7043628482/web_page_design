@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>jQuery Sibling Method</h1>
+        <div id="outer">
+            <h2S>Outer</h2>
+            <div id="inner">
+                <h2>Inner</h2>
+                <div class="test">A</div>
+                <div>B</div>
+                <div class="test">C</div>
+                <div >D</div>
+                <div id="child-d">E</div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $('#child-d').siblings().css('background','red');
+            // $('#child-d').siblings('h2').css('background','red');
+            // $('#child-d').siblings('.test').css('background','red');
+            // $('#child-d').next().css('background','red');
+            // $('#child-d').prev().css('background','red');
+            // $('#child-d').prevAll().css('background','red');
+            // $('#child-d').nextAll().css('background','red');
+            // $('#child-d').nextUntil('.test').css('background','red');
+            $('#child-d').prevUntil('.test').css('background','red');
+        });
+    </script>
+</body>
+
+</html>

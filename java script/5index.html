@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculeter</title>
+    <style>
+        .container{
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-left: 10px;
+            padding: 20px;
+            width: 170px;
+        }
+        .container .body .btn{
+            font-size: 15px;
+            font-weight: bold;
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+        .container .body .operator{
+            font-size: 15px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display-1">
+        <input id="V1" placeholder="Value1" name="Value1"/><br>
+        <input id="V2" placeholder="Value2" name="Value2" /><br><br>
+        <input id="result" placeholder="Answer" name="Value3"/> 
+    </div>
+        <div class="body">
+            <button class="btn" onclick="display('1')">1</button>
+            <button class="btn" onclick="display('2')">2</button>
+            <button class="btn" onclick="display('3')">3</button>
+            <button class="operator" id="operator" onclick="ope('+')">+</button>
+            <button class="operator" id="operator" onclick="ope('-')">-</button>
+            <br><br>
+            <button class="btn" onclick="display('4')">4</button>
+            <button class="btn" onclick="display('5')">5</button>
+            <button class="btn" onclick="display('6')">6</button>
+            <button class="operator" id="operator" onclick="ope('*')">*</button> 
+            <button class="operator" id="operator" onclick="ope('/')">/</button> 
+            <br><br>  
+            <button class="btn" onclick="display('7')">7</button>
+            <button class="btn" onclick="display('8')">8</button>
+            <button class="btn" onclick="display('9')">9</button>
+            <button class="operator" id="operator" onclick="ope('%')">%</button>
+            <button class="btn" id="operator" onclick="display('.')">.</button>                          
+            <br><br>
+            <button class="btn" value="clear" id="clear" onclick="clearAll()">clear</button>
+            <button class="btn" onclick="display('0')">0</button>
+            <button class="btn"  onclick="calculetAnswer()">Answer</button>
+        </div>
+    </div>
+
+    <script>
+        var Operator1 ="";
+        var javab1 = "";
+        var f1 ="";
+        var f2 ="";
+        var oper ="";
+        var answer ="";
+        function display(number){
+        var Value1 =document.getElementById("V1").value; 
+        var Value2 =document.getElementById("V2").value; 
+    
+        //  check the condition 
+            if(Operator1 === "" ){
+                document.getElementById("V1").value += number;
+                } 
+            else {
+                document.getElementById("V2").value += number;
+                }
+        } 
+        function ope(operator){
+            Operator1=operator;
+        }
+        function calculetAnswer(){
+            var Value1 =parseFloat (document.getElementById("V1").value);
+            var Value2 =parseFloat (document.getElementById("V2").value);
+            var Ans = document.getElementById("result").value;
+            var operator1 = document.getElementById("operator").value;
+
+             if(f1 === Value1 && f2 === Value2 && oper === operator1){ 
+                  if(Operator1 ==="+"){
+                   result = javab1 += Value2;   
+                 }
+                 if(Operator1 ==="-"){
+                   result = javab1 -= Value2;    
+                 }
+                  if(Operator1 ==="*"){
+                   result = javab1 *= Value2;    
+                 }
+                 if(Operator1 ==="/"){
+                  result = javab1 /= Value2;    
+                 }
+                  if(Operator1 ==="%"){
+                   result = javab1 %= Value2;    
+                 }
+                   javab1=parseFloat(document.getElementById("result").value=result);
+                   console.log("if");
+             }
+
+             else{
+                 f1 = Value1;             
+                 f2 = Value2;
+                 oper = operator1;
+                 answer = result;
+
+                 if(Operator1 ==="+"){
+                    document.getElementById("result").value=Value1 + Value2;    
+                 }
+                 if(Operator1 ==="-"){
+                    document.getElementById("result").value=Value1 - Value2;    
+                 }
+                 if(Operator1 ==="*"){
+                    document.getElementById("result").value=Value1 * Value2;    
+                 }
+                 if(Operator1 ==="/"){
+                    document.getElementById("result").value=Value1 / Value2;    
+                 }
+                 if(Operator1 ==="%"){
+                    document.getElementById("result").value=Value1 % Value2;    
+                 }
+                   javab1=parseFloat(document.getElementById("result").value);
+                   console.log("else");
+             }
+        }
+        function clearAll(operator){
+                Operator1="";
+                document.getElementById("V1").value ="";
+                document.getElementById("V2").value ="";
+                document.getElementById("result").value =""; 
+            }
+     </script>
+</body>
+</html>

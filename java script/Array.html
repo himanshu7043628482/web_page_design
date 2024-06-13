@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <script>
+
+    /* [1]
+    var ary = [10,20,30,40,50];
+    // document.write(ary[3]);
+    for(var a = 0; a <= 4; a++){
+        document.write("<li>" + ary[a] + "</li>");  
+    }*/
+
+    /* [2]
+    var ary = [10,20,30,40,50];
+    var sum = 0;
+    document.write("<ul>");
+    for(var a = 0; a <= 4; a++){
+        document.write("<li>" + ary[a] + "</li>");  
+        sum = sum + ary[a];
+    }
+    document.write("</ul>");
+    document.write("total sum : " + sum);*/
+
+
+   /* [3]
+    var ary = [10,"jay","meet",true,null];
+    document.write("<ul>");
+    for(var a = 0; a <= 4; a++){
+        document.write("<li>" + ary[a] + "</li>");
+    }
+    document.write("</ul>");*/
+
+    //  [4]
+    // var ary = new Array();
+    // ary[0] = 10;
+    // ary[1] = "aman";
+    // ary[3] = true;
+    // document.write("<ul>");
+    //     for(var a = 0; a < 5; a++){
+    //     document.write("<li>" + ary[a] + "</li>");
+    // }
+    // document.write("</ul>");
+
+    /* [5]
+    // loops  se value get 
+
+    var ary = new Array(3);
+         for(var g = 0; g < 3; g++){
+        ary[g] = prompt("enter the value : ");
+    }
+        document.write("<ul>");
+        for(var a = 0; a < 3; a++ ){
+            document.write("<li>" + ary[a] + "</li>");
+        }
+         document.write("</ul>");*/
+
+         [6]
+          var ary = [
+            ["himanshu",22,"Male","B.com"],
+            ["hitesh",22,"Male","B.com"],
+            ["jay",21,"Male","BCA"],
+            ["chetan",22,"Male","M.com"],
+            ["hiren",22,"Male","M.com"],
+
+         ];
+         document.write(ary[1][1]);
+        //  document.write(ary.length);
+        document.write("<table border='1px'");
+        // document.write("<table border='1px' cellspacing='0'");
+         for (var a =0; a < ary.length; a++){
+        document.write("<tr>");
+            for(var b =0; b < ary.length; b++){
+            document.write("<td>" + ary[a][b] + " </td> ");
+            }
+            document.write("</tr>");
+         }
+         document.write("</table>");
+
+        //  modify Array Element
+       /*var a = ["himanshu",22,"Male","B.com"];
+       document.write(a + "<br>");
+       a[0] ="hitesh";
+       document.write(a + "<br>");
+       a[1] = 20;    
+       document.write(a + "<br>");
+
+    //    Remove  Array Element
+       var a = ["himanshu",22,"Male","B.com"];
+       document.write(a + "<br>");
+        delete a[1] ;
+       document.write(a + "<br>");*/
+
+
+        // Examples [1]
+       let names =[true,15,"sandip",{name:"Himanshu",surname:"sadadiya",subject:["hindi","english"]}];
+    //    console.log(names[2]="lalo");
+    //    names.push("kuldeep");
+    //    names[3].name ="mitesh";
+    //    names[3].subject[0]="gujarati";
+       console.log(names);
+
+    //    names[4] ="bipin";
+    //    for(let i=0; i > 5; i++){
+    //     console.log(names[i]);
+    //    }
+    //    for(let i=0; i > names.length; i++){
+    //     console.log(names[i]);
+    //    }
+
+    // Examples Object [2]
+    /*let boi =["parsondata",{surname :"sadadiya",firstname :"himanshu",lastname :"himanshu",age :[20],salary :[20000]}];
+    boi[1].age[0]=22;
+    boi[1].firstname="Himanshu";
+    boi[1].salary[0]=25000;
+    console.log(boi);*/ 
+
+    // Example [3]
+    /*var a = ["Marks",{gujarati:49,maths:45,english:45,hindi:40}];
+    a[1].english=48;
+    a[1].maths=48;
+    a[1].hindi=46;
+    console.log(a);*/
+
+    </script>
+</head>
+<body>
+     
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <script>
+            var student = {name:"sandip", email:"sonagrasandip0963@gmail.com", phoneNumber:"8160223007", subjects: { subject1:"html", subject2:"css", subject3:"javascript"}};
+            console.log(typeof student, student);
+            
+            var subject1 = {name:"sandip", totalmarks:"143", passfail:"pass", grade:"a1"}
+            console.log(student.subjects.subject1);
+            student.subjects.subject1 = subject1;
+            console.log(student);
+
+            console.log(subject1.totalmarks);
+            subject1.totalmarks = 143;
+            console.log(student);
+        </script>
+    </body>
+</html>

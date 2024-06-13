@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jQuery Filtering Method</h1>
+
+    <div id="first">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi accusantium inventore sunt in nisi voluptate aspernatur velit eius nemo architecto?</p>
+        <p class="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae optio esse hic. Vitae deleniti similique harum delectus incidunt magni. Vero!</p>
+    </div>
+    <ul>
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+    </ul>
+    <div id="second">
+        <p class="test">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia odio ducimus voluptatum aliquid dolores, eaque a nulla rerum quae. Nihil, debitis omnis tempore impedit vel quos reprehenderit id delectus reiciendis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eaque sint ab, praesentium cum cumque quaerat molestiae quia impedit maxime exercitationem quam repellat sunt iste, consequuntur, necessitatibus odit. Totam, officia?</p>
+    </div>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('p').first().css('background','yellow');
+            // $('#second p').first().css('background','yellow');
+            // $('ul li').first().css('background','yellow');
+
+            // $('p').eq(1).css('background','pink');
+            // $('ul li').eq(1).css('background','pink');
+            // $('ul li').eq(-1).css('background','pink');
+
+            $('p').filter('.test').css('background','red');
+            $('#second p').not('.test').css('background','green');
+            // $('ul li').slice(1).css('background','pink');
+            // $('ul li').slice(1,3).css('background','pink');
+            $('p').slice(1,3).css('background','orange');
+        });
+    </script>
+</body>
+</html>

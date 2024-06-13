@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #abc {
+            padding: 10px;
+            margin: 20px;
+            height: 200px;
+            width: 600px;
+            background: lightblue;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Event Type</h1>
+    <div id="abc">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse debitis modi officiis. Debitis labore, ipsam, illum repudiandae beatae, aliquam tenetur velit id maxime odio qui eius minima soluta pariatur ut.</p>
+        <br>
+        <button>Test Button</button>
+    </div>
+        <br>
+    <h2></h2>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          $('#abc').on("click",function(){
+            // $('h2').html('Target Element :' + event.target);
+
+            $('h2').html('Target Element :' + event.target.innerHTML);
+          });
+        });
+    </script>
+
+</body>
+
+</html>

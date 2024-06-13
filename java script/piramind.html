@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piramind prectice</title>
+</head>
+<body>
+    <div id="piramind1"></div>
+    <div id="piramind2"></div>
+    <div id="piramind3"></div>
+    <div id="piramind4"></div>
+
+    <script>
+    // successes first piramind :------------------------------------------------------------------------------------>
+    let str ="";  
+    for(i=1; i<=5; i++){
+        for(j=5-i; j>0; j--){
+            str+="&nbsp&nbsp"
+        }
+        for(k=1; k<=i; k++){
+            str+="*";
+        }
+        for(l=i-1; l>0; l--){
+            str+="*";
+        }
+        str+="<br>";
+    }
+    document.getElementById("piramind1").innerHTML=str;
+   
+        for(i=4; i>=1; i--){
+        for(j=5; j>i; j--){
+            str+="&nbsp&nbsp";
+        } 
+        for(k=1; k<=i; k++){
+            str+="*";
+        }
+        for(l=1; l<=i-1; l++){
+           str+="*";
+        }
+        str+="<br>";
+    }
+    document.getElementById("piramind1").innerHTML=str;   
+    
+    // successes second  piramind -------------------------------------------------------------------------------->
+    let op ="";
+    for(i=1;i<=5;i++){
+        for(k=1;k<=5-i;k++){
+            op+="&nbsp&nbsp";
+        }
+        for(j=i;j>=1;j--){
+            op+= j ;
+        }
+        for(y=2;y<=i;y++){
+            op+= y;
+        }
+        op+="<br>";
+    }
+    document.getElementById("piramind2").innerHTML=op
+    for(i=5-1;i>=1;i--){
+       for(k=1;k<=5-i;k++){
+           op+="&nbsp&nbsp";
+       }
+       for(j=i;j>=1;j--){
+          op+=j;
+       }
+       for(y=2;y<=i;y++){
+          op+=y;
+       }
+       op+="<br>";
+    }
+    document.getElementById("piramind2").innerHTML=op;
+
+    //  successes third piramind --------------------------------------------------------------------->
+    let ok ="";
+    for(i=1;i<=5;i++){
+        for(k=1;k<=5-i;k++){
+            ok+="&nbsp&nbsp";
+        }
+        for(j=i;j>=1;j--){
+            ok+= j ;
+        }
+        for(y=1;y<=i;y++){
+            ok+= y;
+        }
+        ok+="<br>";
+    }
+    document.getElementById("piramind3").innerHTML=ok;
+    for(i=5-1;i>=1;i--){
+       for(k=1;k<=5-i;k++){
+           ok+="&nbsp&nbsp";
+       }
+       for(j=i;j>=1;j--){
+          ok+=j;
+       }
+       for(y=1;y<=i;y++){
+          ok+=y;
+       }
+       ok+="<br>";
+    }
+    document.getElementById("piramind3").innerHTML=ok;
+    </script>
+</body>
+</html>

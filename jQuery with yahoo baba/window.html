@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Event</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+        #box{
+            width: 30%;
+            height: 200px;
+            background: pink;
+            padding: 10px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Window Event</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid excepturi illo nemo maxime numquam rem odio consectetur ducimus odit. Reiciendis sequi exercitationem, voluptatibus optio sit minima, aliquam reprehenderit eum, tempore id cumque maxime debitis dolorum. Voluptatum rerum, ipsam aut assumenda voluptas enim labore earum? Atque, harum dolore, praesentium aspernatur amet vitae doloribus voluptatum eveniet quod iste, explicabo officiis incidunt eaque veritatis illo unde maiores assumenda alias nulla accusantium veniam sunt? Ducimus, eaque, nostrum ex dicta laboriosam porro tempore quidem non, et laudantium delectus dolorum magni eveniet aliquam aspernatur architecto incidunt unde. Libero soluta nemo sed minus aspernatur saepe quis dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate natus dolorem iure eos nesciunt amet accusantium voluptas quibusdam id. Tenetur ea atque eum similique, at possimus obcaecati alias sit id totam laborum asperiores qui harum veniam tempore facere, illum quae quidem quo nostrum quos beatae voluptates. Optio minus ipsam sint similique asperiores blanditiis totam alias veniam facere quidem excepturi nostrum voluptates, nam tempore. Dolores corrupti cum omnis dicta ab reiciendis sapiente facilis a quasi? Dicta corporis deleniti ullam aspernatur nesciunt fugit repellat pariatur! Aliquid, necessitatibus nemo? Corrupti quidem, aut quia ratione nisi beatae ullam magni consectetur aperiam iusto explicabo suscipit!</p>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe molestias sint, modi architecto blanditiis fuga, natus maiores mollitia at ut consequatur in accusamus ducimus cupiditate ex! Aliquid voluptas asperiores beatae quisquam dignissimos harum perferendis reiciendis esse quos magni mollitia cupiditate odit quibusdam aut, exercitationem impedit repellat error totam earum porro et deleniti eveniet minus? Nihil at repellendus officia earum ad hic voluptates illo, voluptate consectetur sunt provident mollitia dolor architecto ratione culpa recusandae veritatis! Ipsam pariatur quia error quas, perferendis cumque alias sit, ullam odit magni perspiciatis voluptates, veritatis aliquam velit! Odit in, neque est fuga beatae quisquam eveniet nobis?</p>
+
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                console.log("You are scrolling");
+            });
+        });
+    </script>
+</body>
+</html>

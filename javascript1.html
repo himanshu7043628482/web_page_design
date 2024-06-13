@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <script>
+            var name="sandip"
+            console.log(name);
+
+            var name="dhiraj"
+            console.log(typeof name,name);
+
+            var name = "meet";
+            var marks=90;
+            var result;
+            var ispass=true;
+
+
+            var resultDetails = {name:"dhiraj", rollno:"1", result:"pass",subjects: {html:"50",php:"90",javascript:"80",css:"70"} };
+            console.log(typeof resultDetails, resultDetails);
+            console.log(resultDetails.subjects.css);
+            resultDetails.subjects.css = marks;
+            console.log(resultDetails);
+            
+            console.log(resultDetails.name);
+            resultDetails.name = name;
+            console.log(resultDetails);
+
+        </script>
+    </body>
+</html>

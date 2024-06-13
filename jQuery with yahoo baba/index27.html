@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 230px;
+            height: 150px;
+            background: lightpink;
+            padding: 10px;
+            border: 2px solid black;
+            left: 20px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Hide Show & Toggle Method</h1>
+    <div id="box" class="test">
+        <h2 class="abc">Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consectetur ut quia praesentium commodi
+            doloremque ipsam molestias ipsa eligendi itaque!</p>
+    </div><br>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#hide').click(function () {
+                // $('#box').hide('fast');
+                // $('#box').hide('slow');
+                // $('#box').hide(3000);
+                $('#box').hide(3000, function () {
+                    console.log("Now it is hidden");
+                });
+            });
+            $('#show').click(function () {
+                // $('#box').show('fast');
+                // $('#box').show('slow');
+                // $('#box').show(2000);
+                $('#box').show(2000, function () {
+                    console.log("Now it is show");
+                });
+            });
+            $('#toggle').click(function () {
+                $('#box').toggle(1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

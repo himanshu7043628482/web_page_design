@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Table</title>
+</head>
+<body>
+        Start :<input type="text" id="n1"><br><br>
+        End :<input type="text" id="n2"><br><br>
+        column :<input type="text" id="col"><br><br>
+        <button onclick="table()">button</button>
+        <div id="display"></div>
+
+    <script>
+        function table(){
+            let start = parseInt(document.getElementById("n1").value);
+            let end = parseInt(document.getElementById("n2").value);
+            let col =  document.getElementById("col").value;
+            let table ="<table border = 1>";
+            table+="<tr>"
+            let count = 0;
+        
+             for(start; start<=end; start++ ){
+                    table+="<td>" 
+                    for(i=1; i<=10; i++){
+                         table += start + "x" + i +"=" + start * i +"<br>" ;
+                            }
+                            count++;
+                            table+="</td>"
+                            if (count%col ==0) {
+                                table+="</tr>"
+                            }
+                        }
+                        table+="</table>"
+                        document.getElementById("display").innerHTML = table;
+            }
+    </script> 
+</body>
+</html> 

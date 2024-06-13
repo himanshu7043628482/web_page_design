@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple table</title>
+</head>
+<body>
+   Row : <input type="text" id="row">
+   column : <input type="text" id="col">
+   <button id="create" onclick="table()">click</button>
+
+   <script>
+    function table(){
+        let row = document.getElementById("row").value;
+        let col  = document.getElementById("col").value;
+
+        let table="<table border = 1 >"
+           table+="<tr>"
+        for(r=1; r<=row; r++){
+            for(c=1; c<=col; c++){
+                table+="<td>"+ c +"x"+ r + "=" + r * c + "</td>"
+            }
+            table+="</tr>"
+        }
+        table+="</table>";
+        document.getElementById("create").innerHTML = table ;
+    }
+   </script>
+</body>
+</html>

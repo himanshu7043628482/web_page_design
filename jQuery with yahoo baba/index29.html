@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 230px;
+            height: 150px;
+            background: lightpink;
+            padding: 10px;
+            border: 2px solid black;
+            left: 20px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery slideUp, slideDown & slideToggle Method</h1>
+    <div id="box" class="test">
+        <h2 class="abc">Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consectetur ut quia praesentium commodi
+            doloremque ipsam molestias ipsa eligendi itaque!</p>
+    </div><br>
+    <button id="up">slideUp</button>
+    <button id="down">slideDown</button>
+    <button id="toggle">slideToggle</button>
+    <!-- <button id="to">FadeTo</button> -->
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#up').click(function () {
+                $('#box').slideUp();
+                // $('#box').slideUp('fast');
+                // $('#box').slideUp('slow');
+                // $('#box').slideUp(2000);
+                // $('#box').slideUp(2000,function(){
+                //     console.log("Now it is Hidden");
+                // });
+
+            });
+            $('#down').click(function () {
+                $('#box').slideDown();
+                // $('#box').slideDown('fast');
+                // $('#box').slideDown('slow');
+                // $('#box').slideDown(2000);
+                // $('#box').slideDown(2000,function(){
+                //     console.log("Now it is show");
+                // });
+
+            });
+            $('#toggle').click(function () {
+                $('#box').slideToggle();
+                // $('#box').slideToggle(1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

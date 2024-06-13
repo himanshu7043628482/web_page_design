@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #box {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        .first {
+            background: tan;
+        }
+
+        .second {
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Class Method</h1>
+
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum <span>dolor sit amet</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic dolor
+            distinctio iste aspernatur minus possimus molestias id quas repellat eaque! Nulla quidem dolore deleniti
+            repellat inventore qui, provident perspiciatis eaque.</p>
+    </div><br>
+    <button id="add">Add Class</button>
+    <button id="remove"> Remove Class</button>
+    <button id="toggle">Toggle Class</button>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $('#add').click(function () {
+            $('h1').addClass('first');
+            $('#box').addClass('second');
+        });
+
+        $('#remove').click(function () {
+            $('h1').removeClass('first');
+            $('#box').removeClass('second');
+        });
+
+        $('#toggle').click(function () {
+            $('h1').toggleClass('first');
+            $('#box').toggleClass('second');
+        });
+    </script>
+</body>
+
+</html>

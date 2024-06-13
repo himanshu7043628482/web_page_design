@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formvalidation-2</title>
+    <style>
+       td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form name="form-1" id="myForm">
+        <table  align="center" cellpadding="10">
+
+        <tr>
+        <td>First Name : <input type="text" placeholder="Enter First Name" name="firstname" id="firstname" maxlength="20"><span id="Message1" style="color: red;" ></span></td>
+        </tr>
+
+        <tr>
+        <td>Last Name : <input type="text" placeholder="Enter Last Name" name="lastname" id="lastname" maxlength="20"><span id="Message2" style="color: red;"></span></td>
+        </tr>
+
+        <tr>
+          <td>Gender : <input type="radio" name="Gender"  value="male">Male
+                       <input type="radio" name="Gender"  value="female">Female
+                       <input type="radio" name="Gender"  value="other">other    
+                       <span id="Message3" style="color: red;"></span>
+        </td>
+        </tr>
+        <tr>
+            <td>State : <select name="State" id="state">
+                <option value="">Select Your State</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Maharast">Maharast</option>
+                <option value="Goa">Goa</option>   
+            </select>
+            <span id="Message4" style="color: red;"></span>
+        </td>
+        </tr>
+
+        <tr>
+            <td>Address : <textarea name="Address" id="address" cols="30"></textarea><span id="Message5" style="color: red;"></span></td>
+        </tr>
+
+        <tr>
+            <td>Password : <input type="text" name="Password" id="password" placeholder="Enter Your Password"><span id="Message6" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Hobbies :
+                    <input type="checkbox" name="Hobby"  value="gameing">gameing
+                    <input type="checkbox" name="Hobby"  value="Music">Music
+                    <input type="checkbox" name="Hobby"  value="Movie">Movie
+                    <input type="checkbox" name="Hobby"  value="Woking">Woking
+                    <input type="checkbox" name="Hobby" value="Travelling">Travelling
+                    <span id="Message7" style="color: red;"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center"><input type="button" value="submit" onclick="savedata()"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function savedata(){
+             var fname = document.getElementById("firstname").value;
+             var lname = document.getElementById("lastname").value; 
+             var stat =document.getElementById("state").value;
+             var add = document.getElementById("address").value;
+             var pass = document.getElementById("password").value;
+             var gender =document.getElementsByName("Gender");
+             var hobby = document.getElementsByName("Hobby");
+             var form = document.getElementById("myForm");
+             
+             if(fname==""){
+                document.getElementById("Message1").innerHTML = "**Please Fill The First Name";
+             }  
+             else{
+                document.getElementById("Message1").innerHTML ="";
+             }     
+
+             if(lname==""){
+                document.getElementById("Message2").innerHTML = "**Please Fill The Last Name";
+             }
+             else{
+                document.getElementById("Message2").innerHTML ="";
+             } 
+
+             var gen =0;
+             if (gender[0].checked==true) {
+                 gen = 1;
+             } 
+             if (gender[1].checked==true) {
+                gen += 1;
+             } 
+              if (gender[2].checked==true) {
+                gen += 1;
+             }  
+             if (gen =="") {
+                document.getElementById("Message3").innerHTML = "**Please Select Anyone";
+             } 
+             else{
+                document.getElementById("Message3").innerHTML = ""; 
+             }
+
+             if(stat==""){
+                document.getElementById("Message4").innerHTML = "**Please Select The State";
+             }
+             else{
+                document.getElementById("Message4").innerHTML ="";
+             }     
+
+             if(add==""){
+                document.getElementById("Message5").innerHTML = "**Please Fill The Address";
+             } 
+             else{
+                document.getElementById("Message5").innerHTML ="";
+             }     
+
+             if(pass==""){
+                document.getElementById("Message6").innerHTML = "**Please Fill The Password";
+             }
+             else{
+                document.getElementById("Message6").innerHTML ="";
+             } 
+             var valid =0;
+             if (hobby[0].checked==true) {
+                 valid = 1;
+             } 
+             if (hobby[1].checked==true) {
+                valid += 1;
+             } 
+              if (hobby[2].checked==true) {
+                valid += 1;
+             }  
+             if (hobby[3].checked==true) {
+             valid += 1;
+             } 
+              if (hobby[4].checked==true) {
+                valid += 1;
+             } 
+             if(valid ==""){
+                document.getElementById("Message7").innerHTML = "**Please Select Checkbox";
+             }
+             else if(valid < 2){
+                document. getElementById("Message7").innerHTML = "**minimum tow Select Checkbox";
+             }
+             else if(valid > 4){
+                document. getElementById("Message7").innerHTML = "**meximum  four Select Checkbox";
+             }
+             else{
+                document.getElementById("Message7").innerHTML = ""; 
+             } 
+             if(fname != "" && lname != "" && gender != "" && stat != "" && add != "" && pass != "" && valid > 2 && valid < 5){
+                form.submit();
+             }
+          }
+    </script>
+    
+</body>
+</html> 

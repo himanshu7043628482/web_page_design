@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #abc {
+            height: 200px;
+            width: 500px;
+            background: lightblue;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Event Type</h1>
+    <div id="abc"></div>
+    <div id="xyz"></div>
+    <br>
+    input :<input type="text" name="" id="input">
+    <br>
+    <h2></h2>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // No.1
+            $(document).mousemove(function (event) {
+                $('#abc').text(event.pageX);
+                $('#abc').text("X :" +event.pageX + "Y :" + event.pageY);
+                $('#abc').on("click dblclick mouseover mouseout", function (event) {
+                    $('h2').html("Event :" + event.type);
+                });
+            });
+
+            // No.2
+            $('#abc').on("mouseover mouseout mousedown",function(){
+                $('h2').html(event.type + ":" + event.which);
+            });
+
+            $('#input').on('keydown',function(){
+                $('h2').html(event.type + ":" + event.which);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

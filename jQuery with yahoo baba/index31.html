@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 250px;
+            height: 200px;
+            background: lightgreen;
+            padding: 10px;
+            border: 2px solid black;
+            left: 20px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Chaining Method</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsam dolores deleniti dolorem dignissimos nobis, praesentium veniam veritatis laboriosam quibusdam!</p>
+    </div><br>
+    <button id="animate">Animate</button>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#animate').click(function () {
+                $('#box').css('background','pink').slideUp(2000).slideDown(2000);
+                // $('#box').animate({top:'300px'});
+                // $('#box').animate({width:'500px'},3000);
+            });
+        });
+    </script>
+</body>
+
+</html>

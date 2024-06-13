@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 500px;
+            padding: 10px;
+            margin: 10px;
+            background: lightgreen;
+            border: 5px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Event.data</h1>
+
+    <div id="box">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, laudantium.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, repudiandae?</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, hic?</p>
+    </div>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('p').each(function(i){
+                $(this).on("click",{value:i},function(event){
+                   alert(event.data.value);
+                });
+            });
+        })
+    </script>
+</body>
+</html>

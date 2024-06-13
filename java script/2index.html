@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculetor</title>
+    <style>
+        #btn{
+            margin-left: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="C-1">
+          <div>
+          Value1 <input id="v1" type="number" name="value1"/>
+            </div><br>
+            <div>
+            Value2 <input id="v2" type="number" name="value2"/>
+            </div><br>
+            <div>
+            Operator
+            <select id="Operators" name="oper" value="operators">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            </div><br>
+            Answer <input id="ans" name="answer"/>
+            <div><br>
+            <button id="btn" onclick="calculetAnswer()">Button</button>
+        </div>
+    </div>
+    <script>
+        function calculetAnswer(){
+            var v1 = parseInt(document.getElementById("v1").value);
+            var v2 = parseInt(document.getElementById("v2").value);
+            var Oper = document.getElementById("Operators").value;
+
+            if(Oper ==="+"){
+            document.getElementById("ans").value = v1 + v2;  
+            }
+             if(Oper ==="-"){
+            document.getElementById("ans").value = v1 - v2;
+            }
+             if(Oper ==="*"){
+            document.getElementById("ans").value = v1 * v2;
+            }
+             if(Oper ==="/"){
+            document.getElementById("ans").value = v1 / v2;
+            }
+             if(Oper ==="%"){
+            document.getElementById("ans").value = v1 % v2;
+        }
+    }
+</script>
+</body>
+</html>

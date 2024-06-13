@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 500px;
+            padding: 10px;
+            margin: 10px;
+            background: lightslategray;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Event.stopPropagation</h1>
+    <div id="box">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur dolore rem cupiditate quos molestiae architecto repellat amet dicta! Omnis voluptas tempora fugit eius quos amet, necessitatibus harum voluptatum molestiae ullam.</p>
+        <button>Test Button</button>
+    </div>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').click(function(){
+                alert("The div element was clicked");
+            });
+            $('h2').click(function(){
+                alert("The h2 element was clicked");
+            });
+            $('p').click(function(event){
+                event.stopPropagation();
+                alert("The p element was clicked :" + event.isPropagationStopped());
+            });
+            $('button').click(function(){
+                alert("The button element was clicked");
+            });
+        });
+    </script>
+    
+</body>
+</html>

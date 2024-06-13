@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+</head>
+
+<body>
+    <h1>Form Event</h1>
+    <form action="" id="form">
+        Name :<input type="text" name="name" id="name">
+        <br><br>
+        Class :<input type="text" id="class">
+        <br><br>
+        <label for="">Country:</label>
+        <select name="country" id="country">
+            <option value="India">India</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Nepal">Nepal</option>
+        </select>
+        <br><br>
+        <input type="submit" name="submit" id="submit">
+    </form>
+    <div id="div" style="border: 1px solid red; margin-top: 20px;"></div>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $('#name,#class,#country').focus(function () {
+            //     $(this).css('background-color', 'pink');
+            // });
+
+            // $('#name,#class,#country').blur(function () {
+            //     $(this).css('background-color', 'red');
+            // });
+
+            // $('#country').change(function () {
+            //     $(this).css('background-color', 'yellow');
+            // });
+
+            // $('#country').change(function () {
+            //     var a = $(this).val();
+            //     $('#div').html(a);
+            // });
+
+            // $('#name,#class').select(function () {
+            //     $(this).css('background-color','green');
+            // });
+
+            // $('#form').submit(function () {
+            //     alert('Form Submitted');
+            // });
+
+            // No.6 Get Method------------------------> 
+            //  var a =$('#box').html();
+            // var a =$('#box').text();
+            // var a = $('#box').attr('class');
+            // console.log(a);
+
+        });
+    </script>
+
+</body>
+
+</html>

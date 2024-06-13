@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 230px;
+            height: 150px;
+            background: lightpink;
+            padding: 10px;
+            border: 2px solid black;
+            left: 20px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery fadeIn, fadeOut,fadeToggle & fadeTo Method</h1>
+    <div id="box" class="test">
+        <h2 class="abc">Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo consectetur ut quia praesentium commodi
+            doloremque ipsam molestias ipsa eligendi itaque!</p>
+    </div><br>
+    <button id="in">FadeIn</button>
+    <button id="out">FadeOut</button>
+    <button id="toggle">FadeToggle</button>
+    <button id="to">FadeTo</button>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#out').click(function () {
+                // $('#box').fadeOut('fast');
+                // $('#box').fadeOut('slow');
+                // $('#box').fadeOut(2000);
+                $('#box').fadeOut(2000,function(){
+                    console.log("Now it is Hidden");
+                });
+
+            });
+            $('#in').click(function () {
+                // $('#box').fadeIn('fast');
+                // $('#box').fadeIn('slow');
+                // $('#box').fadeIn(2000);
+                $('#box').fadeIn(2000,function(){
+                    console.log("Now it is show");
+                });
+
+            });
+            $('#toggle').click(function () {
+                $('#box').fadeToggle(1000);
+            });
+            $('#to').click(function () {
+                $('#box').fadeTo(1000,0.2);
+            });
+        });
+    </script>
+</body>
+
+</html>

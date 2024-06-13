@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>form.crud</title>
+   <style>
+      td {
+         border: 1px solid black;
+      }
+
+      #update {
+         display: none;
+      }
+   </style>
+</head>
+
+<body>
+   <table align="center" cellpadding="8">
+      <form name="form-1" id="myForm">
+         <tr>
+            <td>First Name : <input type="text" id="firstname" placeholder="Enter First Name"><span id="Message1"
+                  style="color: red;"></span></td>
+         </tr>
+         <tr>
+            <td>Last Name : <input type="text" id="lastname" placeholder="Enter Last Name"><span id="Message2"
+                  style="color: red;"></span></td>
+         </tr>
+         <tr>
+            <td>Gender : <input type="radio" name="Gender" value="male">Male
+               <input type="radio" name="Gender" value="female">Female
+               <input type="radio" name="Gender" value="other">other
+               <span id="Message3" style="color: red;"></span>
+            </td>
+         </tr>
+         <tr>
+            <td>State : <select name="State" id="state">
+                  <option value="">Select Your State</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Maharast">Maharast</option>
+                  <option value="Goa">Goa</option>
+               </select>
+               <span id="Message4" style="color: red;"></span>
+            </td>
+         </tr>
+         <tr>
+            <td>Address : <textarea name="add" id="address" cols="30"></textarea><span id="Message5"
+                  style="color: red;"></span></td>
+         </tr>
+         <tr>
+            <td>Password : <input type="text" id="password" placeholder="Enter Your Password"><span id="Message6"
+                  style="color: red;"></span></td>
+         </tr>
+
+         <tr>
+            <td>Hobbies :
+               <input type="checkbox" name="Hobby" value="gameing">gameing
+               <input type="checkbox" name="Hobby" value="Music">Music
+               <input type="checkbox" name="Hobby" value="Movie">Movies
+               <input type="checkbox" name="Hobby" value="Woking">Woking
+               <input type="checkbox" name="Hobby" value="Travelling">Travelling
+               <span id="Message7" style="color: red;"></span>
+            </td>
+         </tr>
+         <tr>
+            <td align="center">
+               <input type="button" id="addvalue" value="submit" onclick="savedata();">
+               <input type="button" id="updatevalue" value="update" onclick="updatedata();">
+            </td>
+         </tr>
+      </form>
+   </table><br>
+   <table class="list" border="1" align="center">
+      <thead>
+         <tr>
+            <th>No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>State</th>
+            <th>Address</th>
+            <th>Password</th>
+            <th>Hobbies</th>
+            <th>Action</th>
+         </tr>
+      </thead>
+      <tbody id="store">
+      </tbody>
+   </table>
+
+   <script>
+      var array = [];
+      function savedata() {
+         var fname = document.getElementById("firstname").value;
+         var lname = document.getElementById("lastname").value;
+         var gender = document.getElementsByName("Gender");
+         var stat = document.getElementById("state").value;
+         var add = document.getElementById("address").value;
+         var pass = document.getElementById("password").value;
+         var hobby = document.getElementsByName("Hobby");
+         var form = document.getElementById("myForm");
+
+         if (fname == "") {
+            document.getElementById("Message1").innerHTML = "**Please Fill The First Name";
+         }
+         else {
+            document.getElementById("Message1").innerHTML = "";
+         }
+
+         if (lname == "") {
+            document.getElementById("Message2").innerHTML = "**Please Fill The Last Name";
+         }
+         else {
+            document.getElementById("Message2").innerHTML = "";
+         }
+
+         var array1 = [];
+         var radio = 0;
+         for (i = 0; i < gender.length; i++) {
+            if (gender[i].checked == true) {
+               var gen = gender[i].value;
+               array1.push(gen);
+               radio++
+            }
+         }
+         if (radio == "") {
+            document.getElementById("Message3").innerHTML = "**Please Select Anyone";
+         }
+         else {
+            document.getElementById("Message3").innerHTML = "";
+         }
+
+         if (stat == "") {
+            document.getElementById("Message4").innerHTML = "**Please Select The State";
+         }
+         else {
+            document.getElementById("Message4").innerHTML = "";
+         }
+
+         if (add == "") {
+            document.getElementById("Message5").innerHTML = "**Please Fill The Address";
+         }
+         else {
+            document.getElementById("Message5").innerHTML = "";
+         }
+
+         if (pass == "") {
+            document.getElementById("Message6").innerHTML = "**Please Fill The Password";
+         }
+         else {
+            document.getElementById("Message6").innerHTML = "";
+         }
+         var array2 = [];
+         var count = 0;
+         for (i = 0; i < hobby.length; i++) {
+            if (hobby[i].checked == true) {
+               var checkbox = hobby[i].value
+               array2.push(checkbox);
+               count++
+            }
+         }
+         if (count == "") {
+            document.getElementById("Message7").innerHTML = "**Please Select Checkbox";
+         }
+         else if (count < 2) {
+            document.getElementById("Message7").innerHTML = "**minimum tow Select Checkbox";
+         }
+         else if (count > 4) {
+            document.getElementById("Message7").innerHTML = "**meximum  four Select Checkbox";
+         }
+         else {
+            document.getElementById("Message7").innerHTML = "";
+         }
+
+         var obj = {
+            FirstName: fname,
+            LastName: lname,
+            Gender: array1,
+            State: stat,
+            Address: add,
+            Password: pass,
+            Hobby: array2
+         }
+
+         if (fname != "" && lname != "" && array1 != "" && stat != "" && add != "" && pass != "" && array2 != "" && count < 2 == "" && count > 4 == "") {
+            array.push(obj);
+            document.getElementById("myForm").reset();
+            table();
+         }
+      }
+      function table() {
+         var html = "<table border =1 >";
+         for (i = 0; i < array.length; i++) {
+            html += "<tr><td>" + (i + 1) +
+               "</td><td>" + array[i].FirstName +
+               "</td><td>" + array[i].LastName +
+               "</td><td>" + array[i].Gender +
+               "</td><td>" + array[i].State +
+               "</td><td>" + array[i].Address +
+               "</td><td>" + array[i].Password +
+               "</td><td>" + array[i].Hobby +
+               "</td><td>" + "<input type='button' value='edit' onclick='editData(" + i + ")'><input type='button' value='delete' onclick='deleteData(" + i + ")'>" + "</td></tr>";
+         }
+         html += "</table>";
+         document.getElementById("store").innerHTML = html;
+      }
+      
+      function editData(i) {
+         data = i;
+         document.getElementById("firstname").value = array[i].FirstName;
+         document.getElementById("lastname").value = array[i].LastName;
+         document.getElementById("state").value = array[i].State;
+         document.getElementById("address").value = array[i].Address;
+         document.getElementById("password").value = array[i].Password;
+         let checkedhobby = document.getElementsByName("Hobby");
+         let hob = array[i].Hobby;
+         let checkedgender = document.getElementsByName("Gender");
+         let abc = array[i].Gender;
+         for (i = 0; i < checkedgender.length; i++) {
+            if (abc == checkedgender[i].value) {
+               checkedgender[i].checked = true;
+            }
+         }
+         for (i = 0; i < checkedhobby.length; i++) {
+            if (hob.includes(checkedhobby[i].value)) {
+               checkedhobby[i].checked = true;
+            }
+         }
+      }
+
+      function updatedata() {
+         var fname = document.getElementById("firstname").value;
+         var lname = document.getElementById("lastname").value;
+         gender = document.getElementsByName("Gender");
+         var stat = document.getElementById("state").value;
+         var add = document.getElementById("address").value;
+         var pass = document.getElementById("password").value;
+         var hobby = document.getElementsByName("Hobby");
+         var form = document.getElementById("myForm");
+
+         if (fname == "") {
+            document.getElementById("Message1").innerHTML = "**Please Fill The First Name";
+         }
+         else {
+            document.getElementById("Message1").innerHTML = "";
+         }
+
+         if (lname == "") {
+            document.getElementById("Message2").innerHTML = "**Please Fill The Last Name";
+         }
+         else {
+            document.getElementById("Message2").innerHTML = "";
+         }
+
+         var array1 = [];
+         var radio = 0;
+         for (i = 0; i < gender.length; i++) {
+            if (gender[i].checked == true) {
+               var gen = gender[i].value;
+               array1.push(gen);
+               radio++
+            }
+         }
+         if (radio == "") {
+            document.getElementById("Message3").innerHTML = "**Please Select Anyone";
+         }
+         else {
+            document.getElementById("Message3").innerHTML = "";
+         }
+
+         if (stat == "") {
+            document.getElementById("Message4").innerHTML = "**Please Select The State";
+         }
+         else {
+            document.getElementById("Message4").innerHTML = "";
+         }
+
+         if (add == "") {
+            document.getElementById("Message5").innerHTML = "**Please Fill The Address";
+         }
+         else {
+            document.getElementById("Message5").innerHTML = "";
+         }
+
+         if (pass == "") {
+            document.getElementById("Message6").innerHTML = "**Please Fill The Password";
+         }
+         else {
+            document.getElementById("Message6").innerHTML = "";
+         }
+
+         var array2 = [];
+         var count = 0;
+         for (i = 0; i < hobby.length; i++) {
+            if (hobby[i].checked == true) {
+               var checkbox = hobby[i].value
+               array2.push(checkbox);
+               count++
+            }
+         }
+         if (count == "") {
+            document.getElementById("Message7").innerHTML = "**Please Select Checkbox";
+         }
+         else if (count < 2) {
+            document.getElementById("Message7").innerHTML = "**minimum tow Select Checkbox";
+         }
+         else if (count > 4) {
+            document.getElementById("Message7").innerHTML = "**meximum  four Select Checkbox";
+         }
+         else {
+            document.getElementById("Message7").innerHTML = "";
+         }
+
+         var object = {
+            FirstName: fname,
+            LastName: lname,
+            Gender: array1,
+            State: stat,
+            Address: add,
+            Password: pass,
+            Hobby: array2
+         }
+
+         if (fname != "" && lname != "" && array1 != "" && stat != "" && add != "" && pass != "" && array2 != "" && count < 2 == "" && count > 4 == "") {
+            array[data] = object;
+            table();
+            document.getElementById("myForm").reset();
+         }
+      }
+      function deleteData(i) {
+         var name = array.splice(i, 1);
+         table();
+      } 
+   </script>
+</body>
+</html>

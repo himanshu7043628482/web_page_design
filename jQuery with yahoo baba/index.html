@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jQuery</h1>
+    <div id="t1" class="box">
+    <h2>Test Box 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, animi maxime. Neque saepe omnis minus sapiente quisquam illo cum, eaque aspernatur dignissimos rem adipisci vitae magni. Aspernatur corporis quis neque.</p>    
+    </div>
+
+    <div id="t2">
+        <h2>Test Box 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam tempora nesciunt animi sunt, neque qui obcaecati est autem officia fugit repellat laudantium consequuntur expedita? Cum, tempora fuga. Atque, illo voluptate?</p>
+    </div>
+
+    <ul id="list">
+        <li>Orang</li>
+        <li class="test">Banana</li>
+        <li class="test">Apple</li>
+        <li>Mengo</li>
+    </ul>
+
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // No.1 html()-------------->
+            // var a = $('#t1').html();
+            // console.log(a);
+
+            // var b = $('#t2').html();
+            // console.log(b);
+
+
+            // No.2 css()--------------> Selector
+            // $('#list').css('color','red');
+            // $('#list').css('border','2px solid black');
+            // $('.test').css('border','1px solid green');
+            // $('*').css('border','1px solid black');
+            // $('li:first-child').css('border','1px solid black');
+            // $('li:last').css('border','1px solid black');
+            // $('ul li:eq(0)').css('border','1px solid black');
+            //  $('ul li:gt(2)').css('border','1px solid black');
+            // $('ul li:lt(1)').css('border','1px solid black');
+
+            // No.3 Mouse Event ----------------------------------------------->
+            // $('#t1').click(function(){
+            //     $('#t1').css('background-color','green');
+            // });
+
+            // $('#t1').dblclick(function(){
+            //     $('#t1').css('background-color','orange');
+            // });
+
+            // $('#t1').contextmenu(function(){
+            //     $('#t1').css('background-color','blue');
+            // });
+
+            // $('#t1').mouseenter(function(){
+            //     $('#t1').css('background-color','red');
+            // });
+            // $('#t1').mouseleave(function(){
+            //     $('#t1').css('background-color','yellow');
+            // });
+            // $('#t1').dblclick(function(){
+            //     $('#t1').css('background-color','orange');
+            // });
+
+            // No.4 Keyboard Event------------------------------>
+            // $('body').keypress(function(){
+            //     $(this).css('background-color','orange');
+            // });
+            // $('body').keyup(function(){
+            //     $(this).css('background-color','green');
+            // });
+            // $('body').keydown(function(){
+            //     $(this).css('background-color','red');
+            // });
+        });
+    </script>
+</body>
+</html>

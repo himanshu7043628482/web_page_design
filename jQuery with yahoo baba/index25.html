@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 230px;
+            height: 80px;
+            background: lightpink;
+            padding: 10px;
+            border: 1px solid black;
+            position: fixed;
+            left: 20px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery scrollTop & scrollLeft Method</h1>
+    <button id="top">scrollTop</button>
+    <button id="left">scrollLeft</button>
+    <br><br>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis obcaecati nobis neque at deserunt maxime,
+        adipisci, corporis illo ipsa alias laboriosam sit quis, debitis non nesciunt quibusdam dolorum deleniti
+        exercitationem eos porro modi error. Saepe, provident quas? Vero, neque harum assumenda modi ad ullam sapiente
+        dicta delectus nesciunt molestias similique quisquam sint architecto tenetur unde dolorum earum atque eveniet
+        ducimus id. Laudantium impedit est veniam in nobis totam repellat magni, dolor aliquid optio quam perspiciatis
+        ea vel. Autem recusandae reiciendis dicta cum? Id quae quam voluptas non. Iste dolores soluta quasi excepturi
+        beatae ea, tempora, atque alias veniam delectus eos maiores? Placeat, molestias, maiores aliquam ipsa dolorum
+        minus corporis praesentium sint deserunt laborum aperiam iusto pariatur. Suscipit voluptatum odit eos id ad
+        dolore aspernatur, exercitationem repudiandae iure repellendus velit rerum similique sapiente, incidunt minus
+        omnis. Consequuntur libero, architecto velit quasi, perspiciatis dicta eligendi nihil excepturi cum in est.
+        Repellat totam sapiente ratione iusto, eaque accusantium est aspernatur, incidunt alias laboriosam consequatur
+        veniam quasi perspiciatis? Hic optio consectetur nam officia, quo ducimus, veniam modi explicabo aut velit quod
+        rerum quos laboriosam nesciunt! Sit iste, id unde modi, et quidem assumenda nihil quisquam animi dolorum quasi.
+        Pariatur distinctio quidem harum eius nihil?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+        nesciunt inventore nemo impedit vel, commodi sint eligendi voluptate culpa, tempora qui dolorum. Ducimus fuga
+        sit, vel iste minima blanditiis est distinctio dolores officia totam deleniti et quisquam inventore perferendis
+        fugit non numquam veniam quis quas asperiores autem porro explicabo ratione suscipit? Quod ipsum natus odio
+        eligendi, esse iusto accusamus autem libero, necessitatibus distinctio, cum eum. Placeat, eos maxime suscipit
+        minima aspernatur voluptatem voluptates vitae similique explicabo esse, amet facere corrupti quam nemo, dolore
+        consequatur! Nisi, et distinctio. Labore excepturi consequuntur voluptatum reprehenderit distinctio? Non aliquam
+        adipisci nam expedita sit ex nesciunt rerum illum modi cum obcaecati delectus fugiat sapiente esse nihil vitae
+        doloribus aperiam harum cumque impedit optio, eum reiciendis quae. Praesentium, non sequi in velit, vitae optio
+        qui asperiores est dignissimos temporibus iusto dolor obcaecati! Quod, at? Amet veniam magni maiores praesentium
+        mollitia! Illum reiciendis esse soluta neque ad architecto magnam saepe, eveniet necessitatibus eum itaque
+        deserunt inventore iure dicta ex nulla molestias blanditiis doloremque tempora qui fugit delectus? Porro, eos
+        ducimus natus at voluptatibus aliquid dolorum quaerat amet illum repellat esse ipsum cupiditate perspiciatis
+        itaque laudantium debitis laborum incidunt, dolore ratione officiis maxime, aliquam a quae placeat. Ratione
+        minus voluptate, similique eveniet fuga repellat ab consectetur eius odio. Aut dolore numquam quod odit aliquid
+        qui. Ipsam, ab rem! Debitis, itaque? Dolorum ducimus iusto saepe suscipit odio placeat reprehenderit asperiores
+        excepturi officiis, impedit voluptatem odit expedita officia ipsam ex perspiciatis molestias pariatur et ipsa
+        explicabo beatae repudiandae amet dicta? Aperiam magni dicta corrupti totam nisi itaque, excepturi accusantium
+        architecto molestias saepe placeat autem reiciendis obcaecati unde deleniti cum! Excepturi quos quas molestias
+        animi velit minus dolores placeat, eos illo veritatis, nihil eius, nesciunt accusantium unde ex numquam
+        voluptate earum provident enim quasi repudiandae ratione harum ducimus maxime? Ullam, obcaecati?,</p>
+
+    <div id="box"></div>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                $('#box').html('');
+                $('#box').append("Top :" + $(window).scrollTop());
+                $('#box').append("<br>Left :" + $(window).scrollLeft());
+                // console.log($(window).scrollTop());
+                // console.log($(window).scrollLeft());
+            });
+            $('#top').click(function () {
+                $(window).scrollTop(200);
+            })
+            $('#left').click(function () {
+                $(window).scrollLeft(100);
+            });
+        });
+    </script>
+</body>
+
+</html>
